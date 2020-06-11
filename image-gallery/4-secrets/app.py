@@ -22,6 +22,7 @@ def getquote():
     quotes = [q['body'] for q in r.json()['quotes']]
     return random.choice(quotes)
 
+
 @app.route('/')
 def index():
     """Display the single page app"""
@@ -30,7 +31,6 @@ def index():
     uploads = uploads_ref.stream()
     for upload in uploads:
         images.append(upload.to_dict())
-    qotd = "Placeholder QOTD"
     return render_template('index.html', images=images, qotd=getquote())
 
 
