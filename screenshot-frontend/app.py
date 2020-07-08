@@ -41,7 +41,7 @@ def screenshot():
     if r.status_code == 200:
         flash("Screenshot captured successfully, check your GCS bucket!")
     else:
-         flash("Screenshot capture failed :(")
+        flash("Screenshot capture failed :(")
     return redirect(url_for('index'))
 
 
